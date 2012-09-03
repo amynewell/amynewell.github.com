@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://amynewell.github.com/atom.xml" rel="self"/>
   <link href="http://amynewell.github.com/"/>
-  <updated>2012-09-03T13:31:46-04:00</updated>
+  <updated>2012-09-03T13:55:23-04:00</updated>
   <id>http://amynewell.github.com/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -12,5 +12,16 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[In Which Amy Attempts to Return to Tech Blogging...]]></title>
+    <link href="http://amynewell.github.com/blog/2012/09/03/in-which-amy-attempts-to-return-to-tech-blogging-dot-dot-dot/"/>
+    <updated>2012-09-03T13:39:00-04:00</updated>
+    <id>http://amynewell.github.com/blog/2012/09/03/in-which-amy-attempts-to-return-to-tech-blogging-dot-dot-dot</id>
+    <content type="html"><![CDATA[<p>It&#8217;s been a long time since I&#8217;ve tech-blogged. A few years. In the meantime I&#8217;ve been busy coding for work, raising my kids, dealing with some nasty personal crap I won&#8217;t go into, writing other blogs I won&#8217;t link to here, because there&#8217;s very little chance you&#8217;re interested in their content, and generally living life in other ways than by writing about tech. Maybe that&#8217;s led to a little bit of stagnation. I hope not. But it seems like a good time to start up again. I&#8217;ve recently bitten off a few new projects, and I may as well chronicle them here. Should keep me honest, in any case. &#8220;But Amy, you <strong>said</strong> on your blog you were working on that thing&#8230;&#8221; And I&#8217;m learning a ton of new (to me, anyway) tech right now and want to share the resources that have been helpful and those that have not been so helpful. So anyway&#8230;</p>
+
+<p>More to come, soon.</p>
+]]></content>
+  </entry>
   
 </feed>
