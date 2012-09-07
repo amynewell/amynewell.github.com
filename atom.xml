@@ -4,7 +4,7 @@
   <title><![CDATA[git pulled...]]></title>
   <link href="http://amynewell.github.com/atom.xml" rel="self"/>
   <link href="http://amynewell.github.com/"/>
-  <updated>2012-09-06T19:18:37-04:00</updated>
+  <updated>2012-09-06T20:03:09-04:00</updated>
   <id>http://amynewell.github.com/</id>
   <author>
     <name><![CDATA[Amy Newell]]></name>
@@ -12,6 +12,29 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[My first command-line app: it's got options! And --help!]]></title>
+    <link href="http://amynewell.github.com/blog/2012/09/06/my-first-command-line-app-its-got-options-and-help/"/>
+    <updated>2012-09-06T19:30:00-04:00</updated>
+    <id>http://amynewell.github.com/blog/2012/09/06/my-first-command-line-app-its-got-options-and-help</id>
+    <content type="html"><![CDATA[<p>&#8220;`~/code/toys/paythesitter (master) $ ruby bin/paythesitter &#8211;help
+Usage: pay_the_sitter.rb [options]</p>
+
+<p>Specific options:</p>
+
+<pre><code>-t, --extra_time [1,2,3]         Extra minutes to add to total time
+-m, --extra_money [4,3,4]        Extra money to add to total time
+-c, --calendar CALENDAR          calendar name
+-r, --rate RATE                  pay rate
+-s, --start_date START           start date is required
+-e, --end_date [END_DATE]        end date, defaults to today
+-h, --help                       Print this help
+</code></pre>
+
+<p> &#8220;`</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[In Which Amy Attempts to Return to Tech Blogging...]]></title>
