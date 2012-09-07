@@ -5,9 +5,9 @@
 url: http://amynewell.github.com
 title: git pulled...
 subtitle: (probably out of my ass...)
-author: Amy Newell
+author: Amy Isikoff Newell
 simple_search: http://google.com/search
-description: you know what to do
+description:
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
@@ -65,7 +65,7 @@ github_skip_forks: true
 
 # Twitter
 twitter_user: amynewell
-twitter_tweet_count: 5
+twitter_tweet_count: 10
 twitter_show_replies: false
 twitter_follow_button: true
 twitter_show_follower_count: false
