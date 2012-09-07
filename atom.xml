@@ -4,35 +4,58 @@
   <title><![CDATA[git pulled...]]></title>
   <link href="http://amynewell.github.com/atom.xml" rel="self"/>
   <link href="http://amynewell.github.com/"/>
-  <updated>2012-09-06T20:03:09-04:00</updated>
+  <updated>2012-09-07T18:18:35-04:00</updated>
   <id>http://amynewell.github.com/</id>
   <author>
-    <name><![CDATA[Amy Newell]]></name>
+    <name><![CDATA[Amy Isikoff Newell]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
   
   <entry>
-    <title type="html"><![CDATA[My first command-line app: it's got options! And --help!]]></title>
+    <title type="html"><![CDATA[My first command-line app: version 0]]></title>
     <link href="http://amynewell.github.com/blog/2012/09/06/my-first-command-line-app-its-got-options-and-help/"/>
     <updated>2012-09-06T19:30:00-04:00</updated>
     <id>http://amynewell.github.com/blog/2012/09/06/my-first-command-line-app-its-got-options-and-help</id>
-    <content type="html"><![CDATA[<p>&#8220;`~/code/toys/paythesitter (master) $ ruby bin/paythesitter &#8211;help
-Usage: pay_the_sitter.rb [options]</p>
+    <content type="html"><![CDATA[<p>This makes me so pathetically proud it is ridiculous:</p>
 
-<p>Specific options:</p>
+<pre><code> ~/code/toys/paythesitter (master) $ ruby bin/paythesitter --help
+Usage: pay_the_sitter.rb -c CALENDAR -s MM/DD/YYYY -r RATE [OPTIONS]
 
-<pre><code>-t, --extra_time [1,2,3]         Extra minutes to add to total time
--m, --extra_money [4,3,4]        Extra money to add to total time
--c, --calendar CALENDAR          calendar name
--r, --rate RATE                  pay rate
--s, --start_date START           start date is required
--e, --end_date [END_DATE]        end date, defaults to today
--h, --help                       Print this help
+Specific options:
+    -t, --extra_time [1,2,3]         Extra minutes to add to total time
+    -m, --extra_money [4,3,4]        Extra money to add to total cost
+    -c, --calendar CALENDAR          calendar name
+    -r, --rate RATE                  pay rate
+    -s, --start_date MM/DD/YYYY      start date is required
+    -e, --end_date [MM/DD/YYYY]      end date, defaults to today
+    -h, --help                       Print this help
 </code></pre>
 
-<p> &#8220;`</p>
+<p>So what does this app do? It logs in via Oauth2 to my google calendar account,
+checks the specified calendar via the API v3, finds all the events on it between the specified
+dates, tallies up their time, adds in the extra time i give it (mostly for when
+I arrive home late, though I can use negative numbers here for if the sitter is late),
+multiplies by the rate I give, adds the extra money I give it (for sitter expenses),
+and spits out a number which is the amount of cash I need to come up with at the end
+of the day.</p>
+
+<p>This is unlikely to be useful to any other hackers out there, and frankly the
+hand-calculating method was not especially cumbersome. But it&#8217;s been a terrific
+project for a few reasons:</p>
+
+<ul>
+<li><p> I hadn&#8217;t worked with Oauth before. Google strongly recommends you use their libraries to access their APIS, <a href="http://code.google.com/p/google-api-ruby-client/source/browse/">their Ruby library</a> is in an alpha state since 2010, and it&#8217;s using an Oauth implemention called <a href="http://code.google.com/p/oauth-signet/source/browse/">Signet</a> that has no useful information on the web but is their choice because apparently all the others have &#8216;security issues&#8217;. Oh, and Oauth really doesn&#8217;t work on the commandline very well anyway. It&#8217;s really a webby kind of tech. So I&#8217;m not happy with the hacky solution that exists right now, which is mostly cribbed from a google example, but I wasn&#8217;t able to figure out yet how to refresh a token without rewriting the API, which I didn&#8217;t quite want to do, so you have to re-auth every time you use the app. Which is a pain. It&#8217;s high on my to-do list to make it so you can just keep refreshing and don&#8217;t have to keep authorizing. But anyway, I obviously have a better understanding of Oauth now, so, WIN.</p></li>
+<li><p>  I have never written a commandline app before in Ruby. I mean, I must have written little scripts, obviously. But not something parsing opts and everything. But see, look at my beautiful opts! And my bin! I have a bin directory! With an executable ruby file in it. I know, it&#8217;s the little things. In any case, it&#8217;s been a long time since I&#8217;ve written any ruby outside a rails app, and honestly I had no idea how to organize my code, even. I had to do a lot of basic research, and we all know that basic research is good for the soul. I had a few great resources here: <a href="http://practicingruby.com/articles/shared/qyxvmrgmhuln">Gregory Brown&#8217;s article from Practicing Ruby on reimplenting cat in ruby</a>, and the PragProgs&#8217; <a href="http://pragprog.com/book/dccar/build-awesome-command-line-applications-in-ruby">Build Awesome Command-Line Applications in Ruby</a>, which we happened to have lying around the house ( Thanks, husband!). So I basically copied Gregory&#8217;s code organization, except adding a test directory, ( by the way, <strong>so excited</strong> about require_relative in ruby 1.9), and after reading about the different options for options parsing online and in the commandline apps book, went with OptionsParser, the ruby standard lib option, which produced the output
+I&#8217;m so proud of above. ( Also helpful were <a href="http://blog.rubybestpractices.com/posts/rklemme/015-Completing_the_Animal.html">this article</a>, from the <a href="http://blog.rubybestpractices.com/">Ruby Best Practices Blog</a> Actually, in general, anything Gregory Brown has produced is worth reading&#8230;</p></li>
+<li><p>I hadn&#8217;t used minitest before, and it&#8217;d been forever since I&#8217;d even written tests outside a rails app. <a href="http://blog.arvidandersson.se/2012/03/28/minimalicous-testing-in-ruby-1-9">Best minitest resource on internet is here</a> , by the way. So that was another learning opportunity for me.</p></li>
+</ul>
+
+
+<p> So it&#8217;s just a tiny app, but it&#8217;s been a fun learning experience, and while I doubt that the details of babysitter payment are of use to many others, the general idea of grabbing calendar events from google and adding them up for various purposes. ( How much time did I spend last year at my personal trainer?,etc. I&#8217;d have to implement the query parameter for this to be generally useful though&#8230;)</p>
+
+<p> As mentioned above, I hate the way the Oauth is working, but at least it is working. I could use a different ouath library and not use the google ruby api library at all, or at least the auth part of it. Or I could fork the google auth library to make it work better the way I want it to, but I&#8217;m not sure I&#8217;m even understanding it that well. I&#8217;m mulling it all over&#8230;</p>
 ]]></content>
   </entry>
   
